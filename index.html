@@ -244,7 +244,7 @@
 
         .train-container.active {
             display: flex;
-            animation: train-cross 6s linear forwards;
+            animation: train-cross 8s linear infinite;
         }
 
         .train {
@@ -387,15 +387,14 @@
                     trainContainer.classList.add('active');
                 }, 800);
 
-                // Send a second train later
+                // Send a second train on a slower loop, offset by 3s
                 setTimeout(() => {
                     const train2 = trainContainer.cloneNode(true);
                     train2.querySelector('.train').textContent = '🚃🚃🚃🚂';
                     train2.classList.add('active');
                     train2.style.animationDuration = '8s';
                     document.body.appendChild(train2);
-                    setTimeout(() => train2.remove(), 9000);
-                }, 5000);
+                }, 4000);
 
                 // Sparkle stars around voucher
                 setTimeout(() => spawnStars(), 400);
