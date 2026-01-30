@@ -235,10 +235,11 @@
         .train-container {
             position: fixed;
             bottom: 18px;
-            left: -350px;
+            right: -350px;
             z-index: 50;
             display: none;
             align-items: flex-end;
+            direction: rtl;
         }
 
         .train-container.active {
@@ -255,7 +256,7 @@
         .steam-puffs {
             position: absolute;
             top: -15px;
-            left: 5px;
+            right: 5px;
         }
 
         .steam-puff {
@@ -274,8 +275,8 @@
         }
 
         @keyframes train-cross {
-            0%   { left: -350px; }
-            100% { left: 110vw; }
+            0%   { right: -350px; }
+            100% { right: 110vw; }
         }
 
         .track {
@@ -347,7 +348,7 @@
             <span class="steam-puff">💨</span>
             <span class="steam-puff">💨</span>
         </div>
-        <div class="train">🚂🚃🚃</div>
+        <div class="train">🚃🚃🚂</div>
     </div>
 
     <script>
@@ -389,7 +390,7 @@
                 // Send a second train later
                 setTimeout(() => {
                     const train2 = trainContainer.cloneNode(true);
-                    train2.querySelector('.train').textContent = '🚂🚃🚃🚃';
+                    train2.querySelector('.train').textContent = '🚃🚃🚃🚂';
                     train2.classList.add('active');
                     train2.style.animationDuration = '8s';
                     document.body.appendChild(train2);
